@@ -1,0 +1,352 @@
+@charset "UTF-8";
+* {
+  font-family: "Ubuntu", 微軟正黑體;
+  font-size: 16px;
+  position: relative;
+  letter-spacing: 1px;
+}
+body{
+	overflow-x: hidden;
+	margin: 100%;
+	height: 100%;
+}
+
+nav {
+  background-color: #62840B;
+}
+
+nav a {
+  color: white;
+  display: inline-block;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav .navbar-brand {
+  font-size: 20px;
+}
+
+nav .logo {
+  height: 55px;
+  display: inline-block;
+  vertical-align: -0.8em;
+  padding: 5px;
+}
+
+nav ul {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav ul li {
+  margin: 0px 40px;
+  padding: 8px 0px;
+  font-size: 20px;
+}
+
+nav ul li i {
+  padding: 0px 5px;
+  transition-duration: 0.5s;
+  
+}
+
+nav ul li:hover i {
+  font-size: 24px;
+}
+
+nav .navbar-toggler {
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar .collapse .nav-item {
+    margin: 0px 20px;
+  }
+}
+
+.cl-effect-4 .nav-item a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #FFCA1F;
+  content: "";
+  opacity: 0;
+  -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+  transition: height 0.3s, opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  transform: translateY(-10px);
+}
+
+.cl-effect-4 .nav-item a:hover::after, .cl-effect-4 .nav-item a:focus::after {
+  height: 4px;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.cl-effect-4 p{
+	color: white;
+	font-weight: 500;
+	border-bottom: 5px solid #FFCA1F;
+}
+.container {
+  margin-left: 100px;
+}
+
+.header {
+  top: 80px;
+  height: 230px;
+  background-color: #62840B;
+  color: #fff;
+}
+
+.header .welcome, .header #user {
+  font-size: 40px;
+  display: inline-block;
+  text-align: left;
+}
+
+.header #user {
+  margin: 10px;
+  font-size: 50px;
+}
+
+.header input {
+  opacity: 70%;
+  width: 300px;
+/*
+  left: 50%;
+  transform: translateX(-50%)
+*/
+}
+
+.header .btn_search {
+  border: solid 0.5px rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  margin: 0px 10px;
+  transition-duration: 0.2s;
+  
+}
+.header .btn_search:hover i{
+	color: #62840B;
+	animation: search_drift 1s infinite linear;
+}
+.header .btn_search:hover {
+	color: #62840B;
+/*	transform: translateX(3px);*/
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.header .watrabear {
+  position: fixed;
+  bottom: 10px;
+  right: 100px;
+  animation: body_drift 4s infinite linear;
+}
+
+.header .watrabear .body {
+  right: 0px;
+  width: 120px;
+  filter: drop-shadow(8px 5px 7px rgba(0, 0, 0, 0.3));
+}
+
+.header .watrabear .ear {
+  position: absolute;
+  top: -20px;
+  width: 45px;
+  height: 45px;
+  background-color: #333;
+  border-radius: 100%;
+  filter: drop-shadow(8px 5px 7px rgba(0, 0, 0, 0.3));
+}
+
+.header .watrabear .left {
+  left: -10px;
+  animation: left_ear_drift 0.8s infinite ease-in-out;
+}
+
+.header .watrabear .right {
+  right: -10px;
+  animation: right_ear_drift 0.8s infinite ease-in-out;
+}
+
+.header .watrabear .eye {
+  position: absolute;
+  top: 40px;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: eye_wrink 5s infinite ease-in-out;
+}
+
+.header .watrabear .left_eye {
+  left: 10px;
+}
+
+.header .watrabear .right_eye {
+  right: 17px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header .welcome {
+    font-size: 30px;
+  }
+  .header .form-inline .btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header .watrabear {
+    right: 30px;
+  }
+  .header .watrabear .body {
+    width: 100px;
+  }
+  .header .watrabear .ear {
+    width: 40px;
+    height: 40px;
+    top: -15px;
+  }
+  .header .watrabear .eye {
+    top: 35px;
+    width: 15px;
+    height: 15px;
+  }
+  .header .watrabear .left_eye {
+    left: 14px;
+  }
+  .header .watrabear .right_eye {
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header .watrabear {
+    right: 30px;
+  }
+  .header .watrabear .body {
+    width: 70px;
+  }
+  .header .watrabear .ear {
+    width: 25px;
+    height: 25px;
+    top: -15px;
+  }
+  .header .watrabear .eye {
+    top: 28px;
+    width: 10px;
+    height: 10px;
+  }
+  .header .watrabear .left_eye {
+    left: 6px;
+  }
+  .header .watrabear .right_eye {
+    right: 10px;
+  }
+}
+
+@keyframes left_ear_drift {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px) translateY(10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes right_ear_drift {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px) translateY(10px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes body_drift {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes eye_wrink {
+  0% {
+    transform: scaleY(1);
+  }
+  87% {
+    transform: scaleY(1);
+  }
+  90% {
+    transform: scaleY(0.3);
+  }
+  93% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+
+/*search animation------------------*/
+@keyframes search_drift {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/*search animation end------------------*/
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9b9b9b;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3, h4 {
+  font-style: bold;
+  font-family: 微軟正黑體;
+}
+
+footer {
+  padding: 20px 0px;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+
+/**奶奶那邊的#app的css*/
+
+#app{
+	margin-top: 90px;
+}

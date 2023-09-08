@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Watrago!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+  <link rel="stylesheet" href="styles/style.processed.css">
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CodePen - Watrago!</title>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&amp;display=swap'>
+    <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css'>
+    
+  </head>
+
+  <body>
+    <!-- partial:index.partial.html -->
+    <nav class="navbar navbar-expand-lg cl-effect-4 justify-content-end fixed-top"><a class="navbar-brand" href="#"> <img class="logo" src="https://i.imgur.com/ljT1Tr5.png"/>Watrago!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="index.html">熱門景點</a></li>
+          <li class="nav-item active"><a class="nav-link" href="recommand.html">推薦景點</a></li>
+          <li class="nav-item active"><a class="nav-link" href="my.html"> <i class="far fa-heart"></i>收藏</a></li>
+          <li class="nav-item active"><p class="nav-link" href="setting.html">使用者設定</p></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="header">
+      <div class="container">
+        <div class="welcome">welcome,</div>
+        <div id="user">User</div>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <div class="watrabear">
+          <div class="ear left"></div>
+          <div class="ear right"></div><img class="body" src="https://i.imgur.com/FVy8LbH.png" />
+          <div class="eye left_eye"></div>
+          <div class="eye right_eye"></div>
+        </div>
+      </div>
+    </section>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0-beta.14/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vuejs-datepicker/1.6.2/vuejs-datepicker.min.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    
+  </body>
+
+  </html>
+
+  <head>
+    <link rel="stylesheet" href="setting_style.processed.css">
+    <!-- <script defer src="watrago.js"></script> -->
+  </head>
+  <main class="site-content">
+    <div class="top"><img src="https://i.imgur.com/I1YLpzK.png">
+      <div id="user">User</div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-sm-12">
+          <div class="col_title"> <img class="icon" src="https://i.imgur.com/i30AEG6.png">個人資料</div>
+          <hr>
+          <form>
+            <fieldset disabled>
+              <div class="form-group row"><label class="col-sm-2 col-form-label col-form-label-sm" for="disabledTextInput"><img src="https://image.flaticon.com/icons/svg/2258/2258570.svg"></label>
+                <div class="col-sm-10"><input class="form-control" id="useremail" type="text" ></div>
+              
+              </div>
+              <div class="form-group row"><label class="col-sm-2 col-form-label col-form-label-sm" for="disabledTextInput"><img src="https://image.flaticon.com/icons/svg/1077/1077114.svg"></label>
+                <div class="col-sm-10"><input class="form-control"  type="text" id="username" ></div>
+              </div>
+              <div class="confirm">儲存</div>
+
+            </fieldset>
+          </form>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <div class="col_title"> <img class="icon set" src="https://i.imgur.com/mgDoIVl.png">偏好設定</div>
+          <hr>
+          <h5>IG趨勢景點時間範圍</h5>
+          <form>
+            <div class="custom-control custom-radio"><input class="custom-control-input" id="customRadio1" type="radio" name="customRadio" ><label class="custom-control-label" for="customRadio1" >一個月</label></div>
+            <div class="custom-control custom-radio"><input class="custom-control-input" id="customRadio2" type="radio" name="customRadio"><label class="custom-control-label" for="customRadio2">半年</label></div>
+          </form>
+          <form class="range-field">
+            <h5>熱門景點偏好比重</h5><input class="custom-range" id="customRange3" type="range" min="0" max="10" step="1"></form>
+        </div>
+      </div>
+      <div class="edit"><img src="https://i.imgur.com/zyvi8IN.png"></div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="row">
+      <div class="columns small-4 large-4">&copy; Watrago! (2020)</div>
+      <div class="columns small-4 large-4"> </div>
+      <div class="columns small-4 large-4"> builders: 陳勗恩 樊驊 石家安 王姵云</div>
+    </div>
+  </footer>
+  <script  src="setting.js"></script>
+</body>

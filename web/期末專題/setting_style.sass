@@ -1,0 +1,87 @@
+*
+  font-size: 20px
+  // border: solid 0.5px blue
+.bg
+  width: 100%
+#user
+  position: absolute
+  font-size: 60px
+  color: #fff
+  top: 50px
+  left: 80px
+.col-md-5
+  top: -15%
+  height: 500px
+  margin-right: auto
+  margin-left: auto
+  margin: 20px
+  border-radius: 20px
+  background-color: #f0f0f0
+  filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.3))
+.header
+  display: none
+.top
+  top: 80px
+.col_title
+  font-size: 30px
+  color: #62840B
+  font-weight: 700
+  margin: 10px 10px
+  .icon
+    height: 40px
+    width: auto
+    margin: 0px 20px
+    vertical-align: sub
+  .set
+    height: 35px
+.form-group
+  img
+    width: 30px
+    opacity: 30%
+    
+form
+  padding: 10px
+
+.range-field    
+  input[type=range]::-webkit-slider-thumb 
+    background: #FFCA1F
+  input[type=range]::-moz-range-thumb 
+    background: #FFCA1F
+  input[type=range]::-ms-thumb
+    background: #FFCA1F
+  input[type=range]:focus
+    outline: none
+
+h5
+  color: #484848
+  font-weight: 600
+  padding: 10px 0px
+.edit
+  display: fixed
+  float: right
+  bottom: 85px
+  background-color: #FFCA1F
+  width: 85px
+  height: 85px
+  border-radius: 50%
+  animation: edit_drift 4s infinite linear
+  filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.3))
+  cursor: pointer
+  img
+    width: 50px
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+@keyframes edit_drift
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-10px)
+  100%
+    transform: translateY(0px)
+// @media screen and (max-width: 600px)
+//   .container
+//     .row
+//       .col-sm-5
+//         top: 80px
+//         width: 100%

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Watrago!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+  <link rel="stylesheet" href="styles/style.processed.css">
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CodePen - Watrago!</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&amp;display=swap'>
+    <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css'>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="recommand.js"></script>
+    <link rel="stylesheet" href="watrago.css">
+  </head>
+
+  <body>
+    <!-- partial:index.partial.html -->
+    <nav class="navbar navbar-expand-lg cl-effect-4 justify-content-end fixed-top"><a class="navbar-brand" href="#">
+        <img class="logo" src="https://i.imgur.com/ljT1Tr5.png" />Watrago!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="index.html">熱門景點</a></li>
+          <li class="nav-item active">
+            <p class="nav-link" href="recommand.html">推薦景點</p>
+          </li>
+          <li class="nav-item active"><a class="nav-link" href="my.html"> <i class="far fa-heart"></i>收藏</a></li>
+          <li class="nav-item active"><a class="nav-link" href="setting.html">使用者設定</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="header">
+      <div class="container">
+        <div class="welcome">welcome,</div>
+        <div id="user">{{user_name}}</div>
+        <form class="form-inline justify-content-md-center">
+          <input class="input form-control mr-sm-2 col-lg-4 col-md-5" id="search" type="search" placeholder="Search"
+            aria-label="Search" />
+          <div class="btn btn_search my-2 my-sm-0" id="testbtn">Search <em class="fas fa-search"></em></div>
+          </button>
+        </form>
+        <div class="search_div">
+          <div class="location_search_btn" onclick="location_click()"><img class="location_check_drif"
+              id="location_check" src="https://i.imgur.com/0OoSlJa.png" /></div>
+          <div id="btn_ok" onclick="location_check()"> OK</div>
+          <div class="location_search">
+            <div class="form-check">
+              <input id="tp" type="checkbox" value="1" />
+              <label class="checkbox-inline" for="tp">台北市</label>
+            </div>
+            <div class="form-check">
+              <input id="ntp" type="checkbox" value="2" />
+              <label class="checkbox-inline" for="ntp">新北市</label>
+            </div>
+            <div class="form-check">
+              <input id="cl" type="checkbox" value="3" />
+              <label class="checkbox-inline" for="cl">基隆市</label>
+            </div>
+            <div class="form-check">
+              <input id="ty" type="checkbox" value="4" />
+              <label class="checkbox-inline" for="ty">桃園市</label>
+            </div>
+            <div class="form-check">
+              <input id="sc" type="checkbox" value="5" />
+              <label class="checkbox-inline" for="sc">新竹市</label>
+            </div>
+            <div class="form-check">
+              <input id="sc_1" type="checkbox" value="6" />
+              <label class="checkbox-inline" for="sc_1">新竹縣</label>
+            </div>
+            <div class="form-check">
+              <input id="ml" type="checkbox" value="7" />
+              <label class="checkbox-inline" for="ml">苗栗縣</label>
+            </div>
+            <div class="form-check">
+              <input id="tc" type="checkbox" value="8" />
+              <label class="checkbox-inline" for="tc">台中市</label>
+            </div>
+            <div class="form-check">
+              <input id="ch" type="checkbox" value="9" />
+              <label class="checkbox-inline" for="ch">彰化縣</label>
+            </div>
+            <div class="form-check">
+              <input id="nt" type="checkbox" value="10" />
+              <label class="checkbox-inline" for="nt">南投縣</label>
+            </div>
+            <div class="form-check">
+              <input id="yling" type="checkbox" value="11" />
+              <label class="checkbox-inline" for="yling">雲林縣</label>
+            </div>
+            <div class="form-check">
+              <input id="cy" type="checkbox" value="12" />
+              <label class="checkbox-inline" for="cy">嘉義市</label>
+            </div>
+            <div class="form-check">
+              <input id="cy_1" type="checkbox" value="13" />
+              <label class="checkbox-inline" for="cy_1">嘉義縣</label>
+            </div>
+            <div class="form-check">
+              <input id="tn" type="checkbox" value="14" />
+              <label class="checkbox-inline" for="tn">台南市</label>
+            </div>
+            <div class="form-check">
+              <input id="ks" type="checkbox" value="15" />
+              <label class="checkbox-inline" for="ks">高雄市</label>
+            </div>
+            <div class="form-check">
+              <input id="pt" type="checkbox" value="16" />
+              <label class="checkbox-inline" for="pt">屏東縣</label>
+            </div>
+            <div class="form-check">
+              <input id="yl" type="checkbox" value="17" />
+              <label class="checkbox-inline" for="yl">宜蘭縣</label>
+            </div>
+            <div class="form-check">
+              <input id="hl" type="checkbox" value="18" />
+              <label class="checkbox-inline" for="hl">花蓮縣</label>
+            </div>
+            <div class="form-check">
+              <input id="tt" type="checkbox" value="19" />
+              <label class="checkbox-inline" for="tt">台東縣</label>
+            </div>
+          </div>
+          <!--location_search-->
+        </div>
+        <!--search_div-->
+
+        <div class="watrabear">
+          <div class="ear left"></div>
+          <div class="ear right"></div><img class="body" src="https://i.imgur.com/FVy8LbH.png" />
+          <div class="eye left_eye"></div>
+          <div class="eye right_eye"></div>
+        </div>
+      </div>
+    </section>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0-beta.14/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vuejs-datepicker/1.6.2/vuejs-datepicker.min.js'></script>
+    <script src="./script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <link rel="stylesheet" href="watrago.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0N_PGBuYMEpwR1txvUGLjFVuLZ3teAHA&callback=initMap&libraries=&v=weekly"
+      defer></script>
+  </body>
+
+  </html>
+
+  <body>
+
+    <div id="app">
+      <div class="close_spotdata">x</div>
+      <div class="spotdata">
+        <i class="fas fa-store-alt"></i><b>地點名稱</b>
+        <p class="name"></p>
+        <i class="fas fa-map-marker-alt"></i><b>地址</b>
+        <p class="address"></p>
+        <div id="map"></div>
+        <i class="fas fa-phone-alt"></i><b>電話</b>
+        <p class="tel"></p>
+        <i class="far fa-calendar-check"></i><b>營業時間</b>
+        <p class="opentime1"></p>
+        <p class="opentime2"></p>
+        <p class="opentime3"></p>
+        <p class="opentime4"></p>
+        <p class="opentime5"></p>
+        <p class="opentime6"></p>
+        <p class="opentime7"></p>
+      </div>
+      <div class="waterfall_area">
+        <div class="contentbox" v-for="item in spotdata">
+          <div id="img_div">
+            <img v-bind:src="item.src" v-bind:id="item.spotid" v-on:click="clickMe" />
+          </div>
+          <div class="middle">
+            <div class="spotname">{{ item.name }}</div>
+          </div>
+
+          <button id="btn_like" class="hvr-grow-rotate" v-bind:id="item.btn_id" v-on:click="clickLike">
+            <i class="far fa-heart"></i>收藏
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+
+  <footer class="site-footer">
+    <div class="row">
+      <div class="columns small-4 large-4">&copy; Watrago! (2020)</div>
+      <div class="columns small-4 large-4"> </div>
+      <div class="columns small-4 large-4"> builders: 陳勗恩 樊驊 石家安 王姵云</div>
+    </div>
+  </footer>
+</body>

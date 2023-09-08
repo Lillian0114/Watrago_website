@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		  var firebaseConfig = {
+		  	 //watrago.api
+		    apiKey: "AIzaSyDeDbdW-Qikl10sjVDstKD1Tz3kJAt7sMc",
+		    authDomain: "watragoweb.firebaseapp.com",
+		    databaseURL: "https://watragoweb.firebaseio.com",
+		    projectId: "watragoweb",
+		    storageBucket: "watragoweb.appspot.com",
+		    messagingSenderId: "427624837625",
+		    appId: "1:427624837625:web:97aaa4689538886a3d0d28",
+		    measurementId: "G-N91QNEB502"
+
+
+		  };
+		  firebase.initializeApp(firebaseConfig);
+		  firebase.analytics();
+		  var firestore = firebase.firestore();
+  		</script>
+  		<img class="logo_login" src="https://i.imgur.com/ljT1Tr5.png"/>
+		<title>LogIn</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+		<link rel="stylesheet" href="watrago.css">
+		<link rel="stylesheet" href="LoginPage.css">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&amp;display=swap'>
+    	<link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css'>
+	</head>
+	<body>
+		<div class="login_bgc">
+			<div name="form" id="form" class="login">
+<!--
+				<h4>登入</h4>
+				<i class="fa fa-user-circle-o"></i>
+-->
+				<h5>帳號</h5>
+				<input type="email" id="account" placeholder="請輸入帳號">
+				<h5>密碼</h5>
+				<input type="password" id="password" placeholder="請輸入密碼">
+				<button id="signButton">註冊</button>
+				<button id="LogInWithGoogle">使用Google</button>
+				<button id="LogIn">登入</button>	
+			</div>
+		</div>
+		
+		<script src="LoginPage.js"></script>		
+	</body>
+</html>

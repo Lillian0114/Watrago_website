@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 微軟正黑體;
+    /* border: 1px solid */
+}
+ 
+body,html{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+  
+.loadingScreen{
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    float: right;
+}
+
+.waterfall_area{
+    height: 100%;
+    width: 85%;
+    overflow: hidden;   
+    display: inline-block;
+    /* padding-left: 20px */
+    margin-top: 10px;
+    /* margin: 0 auto */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+  
+ .contentbox{
+    /* // float: left */
+    margin-bottom: 20px;
+    overflow: hidden;
+    margin-right: 20px;
+    display: inline-block;
+    margin-left: 20px;
+    text-align: center;
+    width: 30%;
+	border-radius: 30px;
+}
+.img_div{
+  width: 15%;
+  cursor: pointer;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 10px;
+}
+.contentbox :hover img{
+  filter: brightness(50%);
+  transform:scale(1.2,1.2);
+}
+.contentbox:hover .middle {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+ .contentbox img{  
+/*
+    width: 60%;
+    cursor: pointer;
+    border-radius: 30px;
+*/
+	width: 100%;
+	object-fit: cover;
+  	overflow: hidden;
+  	transform:scale(1,1);
+  	opacity: 1;
+/*  	display: block;*/
+/*  	height: auto;*/
+  	transition: .5s ease;
+}
+.middle{
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, -50%);
+}
+ .spotname{
+	color: white;
+	font-size: 24px;
+/*
+    margin-top: 10px;
+    font-size: 25px;
+*/
+}
+ /* .name,.address,.opentime,.TEL{
+     z-index: 3;
+     color: #ffffff;
+     font-size: 14px;
+ } */
+ .clickclose_spotdata{
+    width: 0;
+ }
+ .close_spotdata{
+  right: -8px;
+  top: -8px;
+  position: absolute;
+  z-index: 100;
+  text-align: center;
+  line-height: 20px;
+  opacity: 0.8;
+  box-sizing: border-box;
+  height: 0;
+  border: 2px solid #333;
+  display: none;
+  /* width: 30px; */
+  width: 0;
+  font-weight: bold;
+  color: #333;
+  background: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+ .spotdata{
+    width: 0;
+    position: fixed;
+    top: 50%;
+    bottom: 50%;
+    z-index: 2;
+    Transform: translateX(-50%) translateY(-50%);
+    /* opacity: 0.3; */
+    left: 50%;
+    color: black;
+    font-size: 14px;
+    right: 50%;
+    border-radius: 30px;
+    height: 50%;
+    background: #ffffff;
+}
+.showdata{
+    width: 50%;
+    opacity: 0.8;
+    /* height: 50% */
+}
